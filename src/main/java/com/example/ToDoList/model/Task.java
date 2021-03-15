@@ -14,7 +14,7 @@ public class Task {
     public Date ClosedDate;
     public Date OpenedDate;
 
-    public Task(int id, String name, String about, String status,  String priority, Date сreatedDate, Date closedDate, Date openedDate) {
+    public Task(int id, String name, String about, String status, String priority, Date сreatedDate, Date closedDate, Date openedDate) {
         Id = id;
         Name = name;
         About = about;

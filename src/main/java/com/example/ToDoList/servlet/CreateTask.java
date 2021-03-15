@@ -1,5 +1,7 @@
 package com.example.ToDoList.servlet;
 
+import com.example.ToDoList.database.Taskdb;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +16,7 @@ public class CreateTask  {
         PrintWriter out=response.getWriter();
 
         out.println("<div class='container'>");
+        String id=request.getParameter("id");
         String name=request.getParameter("name");
         String about=request.getParameter("about");
         String priority=request.getParameter("priority");
@@ -21,17 +24,15 @@ public class CreateTask  {
         String CreateData=request.getParameter("CreateData");
         String CloseData=request.getParameter("CloseData");
         String OpenData=request.getParameter("OpenData");
-//        String status=request.getParameter("");
-//        Tasks bean=new Tasks(name,about,priority,status,CreateData,CloseData,OpenData);
-//        int i = BookDao.save(bean);
+        int module=Integer.parseInt(id);
+//        Tasks bean=new Tasks(module,name,about,status,priority,CreateData,CloseData,OpenData);
+//        int i = Taskdb.save(bean);
 //        if(i>0){
-            out.println("<h3>Book saved successfully</h3>");
+//            out.println("<h3>task create successful</h3>");
 //        }
-//        request.getRequestDispatcher("addbookform.jsp").include(request, response);
-//        out.println("</div>");
-//
-//
-//        request.getRequestDispatcher("footer.jsp").include(request, response);
-//        out.close();
+        request.getRequestDispatcher("createtask.jsp").include(request, response);
+        out.println("</div>");
+
+        out.close();
     }
 }

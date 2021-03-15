@@ -10,26 +10,26 @@ import java.util.List;
 
 public class Taskdb {
 
-//    public static int save(Task bean){
-//        int status=0;
-//        try{
-//            Connection con= Database.getCon();
-//            PreparedStatement ps=con.prepareStatement("insert into Task values(?,?,?,?,?,?,?,?)");
-//            ps.setInt(1,bean.getId());
-//            ps.setString(2,bean.getName());
+    public static int save(Task bean){
+        int status=0;
+        try{
+            Connection con= Database.getCon();
+            PreparedStatement ps=con.prepareStatement("insert into Tasks values(?,?,?,?,?,?,?,?)");
+            ps.setInt(1,bean.getId());
+            ps.setString(2,bean.getName());
 //            ps.setString(3,bean.setAbout());
 //            ps.setString(4,bean.setPriority());
 //            ps.setString(5,bean.setStatus());
 //            ps.setString(6,bean.setOpenedDate());
 //            ps.setString(7,bean.setClosedDate());
 //            ps.setString(8,bean.setСreatedDate());
-//            status=ps.executeUpdate();
-//            con.close();
-//
-//        }catch(Exception e){System.out.println(e);}
-//
-//        return status;
-//    }
+            status=ps.executeUpdate();
+            con.close();
+
+        }catch(Exception e){System.out.println(e);}
+
+        return status;
+    }
     public static List<Task> view(){
         List<Task> list = new ArrayList<>();
         try{
@@ -59,7 +59,7 @@ public class Taskdb {
         int status=0;
         try{
             Connection con= Database.getCon();
-            PreparedStatement ps=con.prepareStatement("delete from Task where id=?");
+            PreparedStatement ps=con.prepareStatement("delete from Tasks where id=?");
             ps.setInt(1,id);
             status=ps.executeUpdate();
             con.close();
@@ -74,7 +74,7 @@ public class Taskdb {
         Task bean=new Task();
         try{
             Connection con= Database.getCon();
-            PreparedStatement ps=con.prepareStatement("select * from Task where id=?");
+            PreparedStatement ps=con.prepareStatement("select * from Tasks where id=?");
             ps.setInt(1,id);
             ResultSet rs=ps.executeQuery();
             if(rs.next()){
@@ -100,7 +100,7 @@ public class Taskdb {
         int status=0;
         try{
             Connection con= Database.getCon();
-            PreparedStatement ps=con.prepareStatement("update Task set name=?, where id=?");
+            PreparedStatement ps=con.prepareStatement("update Tasks set name=?, where id=?");
             ps.setString(1,bean.getName());
 //            ps.setString(3,bean.setAbout());
 //            ps.setString(4,bean.setPriority());
