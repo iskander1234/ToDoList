@@ -5,9 +5,12 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
+<h1>ToDoList!</h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+
+<h1>Hello ${message} We Welcome you !!!</h1>
+<a class="nav-item nav-link" href="CreateTask">Create Task</a>
+<a class="nav-item nav-link" href="Task">List Task</a>
+
 </body>
 </html>
