@@ -17,12 +17,12 @@ public class Taskdb {
             PreparedStatement ps=con.prepareStatement("insert into Tasks values(?,?,?,?,?,?,?,?)");
             ps.setInt(1,bean.getId());
             ps.setString(2,bean.getName());
-//            ps.setString(3,bean.setAbout());
+            ps.setString(3,bean.getAbout());
 //            ps.setString(4,bean.setPriority());
 //            ps.setString(5,bean.setStatus());
-//            ps.setString(6,bean.setOpenedDate());
-//            ps.setString(7,bean.setClosedDate());
-//            ps.setString(8,bean.setСreatedDate());
+//            ps.setDate(6,bean.setOpenedDate());
+//            ps.setDate(7,bean.setClosedDate());
+//            ps.setDate(8,bean.setСreatedDate());
             status=ps.executeUpdate();
             con.close();
 

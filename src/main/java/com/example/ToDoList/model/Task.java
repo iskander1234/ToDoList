@@ -71,16 +71,12 @@ public class Task {
         Name = name;
     }
 
-    public void setAbout(String about) {
-        About = about;
-    }
+    public void setAbout(String about) { About = about; }
     public void setStatus(String status) {
         Status = status;
     }
 
-    public void setPriority(String priority) {
-        Priority = priority;
-    }
+    public void setPriority(String priority) { Priority = priority; }
 
     public void setСreatedDate(Date сreatedDate) {
         СreatedDate = сreatedDate;

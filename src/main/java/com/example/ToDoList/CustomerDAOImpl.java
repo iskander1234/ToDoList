@@ -9,15 +9,13 @@ public class CustomerDAOImpl implements CustomerDAO{
     static Connection con;
     static PreparedStatement ps;
 
-
-
     @Override
     public int insertCustomer(Customer c) {
         int status=0;
 
         try {
             con=MyConnectionProject.getCon();
-            ps=con.prepareStatement("insert  into customer value(?,?)");
+            ps=con.prepareStatement("insert  into customer value(?,?,?)");
             ps.setString(1,c.getUsername());
             ps.setString(2,c.getName());
             ps.setString(3,c.getPassword());
