@@ -5,6 +5,12 @@
          version="4.0">
     <welcome-file-list>
 <!--        <welcome-file>memberRegistration.jsp</welcome-file>-->
-        <welcome-file>login.jsp</welcome-file>
+<!--        <welcome-file>login.jsp</welcome-file>-->
+        <welcome-file>task-list.jsp</welcome-file>
     </welcome-file-list>
+
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/error.jsp</location>
+    </error-page>
 </web-app>

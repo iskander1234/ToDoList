@@ -2,6 +2,7 @@ package com.example.ToDoList.database;
 
 import com.example.ToDoList.model.Task;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +18,7 @@ public class Taskdb {
             PreparedStatement ps=con.prepareStatement("insert into Tasks values(?,?,?,?,?,?,?,?)");
             ps.setInt(1,bean.getId());
             ps.setString(2,bean.getName());
-            ps.setString(3,bean.getAbout());
+//            ps.setString(3,bean.getAbout());
 //            ps.setString(4,bean.setPriority());
 //            ps.setString(5,bean.setStatus());
 //            ps.setDate(6,bean.setOpenedDate());
@@ -37,16 +38,16 @@ public class Taskdb {
             PreparedStatement ps=con.prepareStatement("select * from Tasks");
             ResultSet rs=ps.executeQuery();
             while(rs.next()){
-                Task bean = new Task();
-                bean.setId(rs.getInt(1));
-                bean.setName(rs.getString(2));
-                bean.setAbout(rs.getString(3));
-                bean.setPriority(rs.getString(4));
-                bean.setPriority(rs.getString(5));
-                bean.setOpenedDate(rs.getDate(6));
-                bean.setClosedDate(rs.getDate(7));
-                bean.setСreatedDate(rs.getDate(8));
-                list.add(bean);
+//                Task bean = new Task();
+//                bean.setId(rs.getInt(1));
+//                bean.setName(rs.getString(2));
+//                bean.setAbout(rs.getString(3));
+//                bean.setPriority(rs.getString(4));
+//                bean.setPriority(rs.getString(5));
+//                bean.setOpenedDate(rs.getDate(6));
+//                bean.setClosedDate(rs.getDate(7));
+//                bean.setСreatedDate(rs.getDate(8));
+//                list.add(bean);
             }
             con.close();
         }catch(Exception e) {
@@ -71,21 +72,21 @@ public class Taskdb {
     }
 
     public static List<Task> viewById(int id){
-        Task bean=new Task();
+        Task bean=new Task(id,"","","","");
         try{
             Connection con= Database.getCon();
             PreparedStatement ps=con.prepareStatement("select * from Tasks where id=?");
             ps.setInt(1,id);
             ResultSet rs=ps.executeQuery();
             if(rs.next()){
-                bean.setId(rs.getInt(1));
-                bean.setName(rs.getString(2));
-                bean.setAbout(rs.getString(3));
-                bean.setPriority(rs.getString(4));
-                bean.setPriority(rs.getString(5));
-                bean.setOpenedDate(rs.getDate(6));
-                bean.setClosedDate(rs.getDate(7));
-                bean.setСreatedDate(rs.getDate(8));
+//                bean.setId(rs.getInt(1));
+//                bean.setName(rs.getString(2));
+//                bean.setAbout(rs.getString(3));
+//                bean.setPriority(rs.getString(4));
+//                bean.setPriority(rs.getString(5));
+//                bean.setOpenedDate(rs.getDate(6));
+//                bean.setClosedDate(rs.getDate(7));
+//                bean.setСreatedDate(rs.getDate(8));
             }
             con.close();
 

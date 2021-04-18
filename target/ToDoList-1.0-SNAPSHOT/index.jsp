@@ -11,6 +11,5 @@
 <h1>Hello ${message} We Welcome you !!!</h1>
 <a class="nav-item nav-link" href="CreateTask">Create Task</a>
 <a class="nav-item nav-link" href="Task">List Task</a>
-
 </body>
 </html>

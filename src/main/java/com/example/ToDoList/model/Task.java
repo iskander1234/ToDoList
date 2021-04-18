@@ -1,92 +1,75 @@
 package com.example.ToDoList.model;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "tasks")
 public class Task {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int Id;
     public String Name;
-    public String About;
+    public String Description;
     public String Status;
     public String Priority;
-    public Date  СreatedDate;
-    public Date ClosedDate;
-    public Date OpenedDate;
 
-    public Task(int id, String name, String about, String status, String priority, Date сreatedDate, Date closedDate, Date openedDate) {
-        Id = id;
+    public Task(String name, String description, String status, String priority) {
         Name = name;
-        About = about;
+        Description = description;
         Status = status;
         Priority = priority;
-        СreatedDate = сreatedDate;
-        ClosedDate = closedDate;
-        OpenedDate = openedDate;
     }
 
-    public Task(){
-
+    public Task(int id, String name, String description, String status, String priority) {
+        Id = id;
+        Name = name;
+        Description = description;
+        Status = status;
+        Priority = priority;
     }
 
+    public Task() {
+
+    }
 
     public int getId() {
         return Id;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public String getAbout() {
-        return About;
-    }
-
-    public String getStatus() {
-        return Status;
-    }
-
-
-    public String getPriority() {
-        return Priority;
-    }
-
-    public Date getСreatedDate() {
-        return СreatedDate;
-    }
-
-    public Date getClosedDate() {
-        return ClosedDate;
-    }
-
-    public Date getOpenedDate() {
-        return OpenedDate;
     }
 
     public void setId(int id) {
         Id = id;
     }
 
+    public String getName() {
+        return Name;
+    }
+
     public void setName(String name) {
         Name = name;
     }
 
-    public void setAbout(String about) { About = about; }
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
+    }
+
+    public String getStatus() {
+        return Status;
+    }
+
     public void setStatus(String status) {
         Status = status;
     }
 
-    public void setPriority(String priority) { Priority = priority; }
-
-    public void setСreatedDate(Date сreatedDate) {
-        СreatedDate = сreatedDate;
+    public String getPriority() {
+        return Priority;
     }
 
-    public void setClosedDate(Date closedDate) {
-        ClosedDate = closedDate;
-    }
-
-    public void setOpenedDate(Date openedDate) {
-        OpenedDate = openedDate;
+    public void setPriority(String priority) {
+        Priority = priority;
     }
 }
