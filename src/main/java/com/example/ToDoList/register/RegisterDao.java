@@ -29,7 +29,7 @@ public class RegisterDao {
     public String insert(Member member){
         loadDriver(dbDriver);
         Connection con = getConnection();
-        String result = "login.jsp";
+        String result = "task-list.jsp";
         String sql = "insert into member values(?,?,?,?)";
 
         PreparedStatement ps = null;

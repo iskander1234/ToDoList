@@ -27,7 +27,7 @@ public class Login extends HttpServlet {
         LoginBean loginBean = new LoginBean();
 
         if (loginBean.validate(member)){
-            response.sendRedirect("register.jsp");
+            response.sendRedirect("task-list.jsp");
         }
         else  {
             response.sendRedirect("login.jsp");
