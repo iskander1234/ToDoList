@@ -1,6 +1,12 @@
 package com.example.ToDoList.login;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "login")
 public class ModelLogin {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String username;
     private String password;
 
