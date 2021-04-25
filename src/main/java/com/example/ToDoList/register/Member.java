@@ -1,7 +1,16 @@
 package com.example.ToDoList.register;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "member")
 public class Member {
-    private String uname, password, email, phone;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String uname;
+    private String password;
+    private String email;
+    private String phone;
 
     public Member() {
     }
