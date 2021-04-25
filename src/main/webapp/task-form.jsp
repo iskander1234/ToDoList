@@ -31,7 +31,7 @@
         <div class="card-body">
             <c:if test="${task != null}">
             <form action="update" method="post">
-                </c:if>
+                <c:if>
                 <c:if test="${task == null}">
                 <form action="insert" method="post">
                     </c:if>
@@ -40,10 +40,10 @@
                         <h2>
                             <c:if test="${task != null}">
                                 Edit Task
-                            </c:if>
+                            <c:if>
                             <c:if test="${task == null}">
                                 Add New Task
-                            </c:if>
+                            <c:if>
                         </h2>
                     </caption>
 
