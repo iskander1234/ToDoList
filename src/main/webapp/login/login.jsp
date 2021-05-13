@@ -18,7 +18,7 @@
 		<form action="<%=request.getContextPath()%>/login" method="post">
 
 			<div class="form-group">
-				<label for="uname">User Name:</label> <input type="text"
+				<%--@declare id="uname"--%><label for="uname">User Name:</label> <input type="text"
 					class="form-control" id="username" placeholder="User Name"
 					name="username" required>
 			</div>
