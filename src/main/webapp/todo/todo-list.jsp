@@ -15,7 +15,7 @@
 <body>
 	<header>
 		<nav class="navbar navbar-expand-md navbar-dark"
-			style="background-color: tomato">
+			style="background-color: #1E90FF">
 			<div>
 				<a href="#" class="navbar-brand"> Todo
 					App</a>
